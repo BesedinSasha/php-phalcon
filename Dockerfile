@@ -6,7 +6,7 @@ RUN apt-get update -q ;\
     apt-get upgrade -y -q ;\
     apt-get dist-upgrade -y -q
 
-RUN apt-get install -y -q php5-dev php5-mcrypt php5-curl php5-pgsql php5-mysql php5-sqlite php5-mongo php5-memcached php5-xdebug php-apc php5-imagick php5-gd php5-geoip gcc git libpcre3-dev
+RUN apt-get install -y -q php5-dev php5-mcrypt php5-curl php5-pgsql php5-mysql php5-sqlite php5-memcached php5-imagick php5-gd php5-intl php5-cli gcc git libpcre3-dev
 
 RUN git clone --depth=1 git://github.com/phalcon/cphalcon.git /usr/local/src/cphalcon
 RUN cd /usr/local/src/cphalcon/build && ./install ;\
