@@ -11,13 +11,11 @@ RUN apt-get install -y -q sudo php5-dev php5-mcrypt php5-curl php5-mysql php5-sq
 RUN git clone git://github.com/phalcon/zephir.git /usr/local/src/zephir
 RUN cd /usr/local/src/zephir ;\
     chmod +x install
-RUN cd /usr/local/src/zephir ;\
-    ./install
 
 RUN git clone git://github.com/phalcon/cphalcon.git /usr/local/src/cphalcon
 RUN cd /usr/local/src/cphalcon ;\
     git checkout 2.1.x ;\
-    zephir install 
+    /usr/local/src/zephir/bin/zephir install
 
 RUN echo "extension=phalcon.so" > /etc/php5/mods-available/phalcon.ini ;\
     php5enmod phalcon
