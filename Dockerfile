@@ -4,9 +4,9 @@ MAINTAINER Sasha Besedin <sasha.besedin@gmail.com>
 
 RUN apt-get update -q ;\
     apt-get upgrade -y -q ;\
-    apt-get dist-upgrade -y -q
+    apt-get dist-upgrade -y -q ;\
 
-RUN apt-get install -y -q sudo php5-dev php5-mcrypt php5-curl php5-mysql php5-sqlite php5-memcached php5-imagick php5-gd php5-intl php5-cli gcc git libpcre3-dev re2c
+RUN apt-get install -y -q sudo php5-dev php5-mcrypt php5-curl php5-mysql php5-sqlite php5-memcached php5-imagick php5-gd php5-intl php5-cli gcc git libpcre3-dev re2c git mysql-client
 
 RUN git clone http://github.com/phalcon/cphalcon.git /usr/local/src/cphalcon ;\
     chmod a+x /usr/local/src/cphalcon/build/install
